@@ -1,6 +1,6 @@
 public class Longest_Common_Prefix {
     public String longestCommonPrefix(String[] strs) {
-        if(strs.length ==0 && strs==null)return "";
+        if(strs.length ==0 || strs==null)return "";
 
         String prefix=strs[0];
 
@@ -25,3 +25,77 @@ public class Longest_Common_Prefix {
         System.out.println("Longest common prefix:" + obj.longestCommonPrefix(strs2) );
     }
 }
+
+// DRY RUN — Test Case 1
+// String[] strs1 = {"flower", "flow", "flight"};
+
+// Step 1: Initialization
+// prefix = strs[0] = "flower"
+
+// Outer Loop (i = 1)
+// strs[1] = "flow"
+
+// While condition:
+// "flow".indexOf("flower") != 0  → true (-1)
+
+
+// Reduce prefix:
+
+// prefix = "flowe"
+
+
+// Check again:
+
+// "flow".indexOf("flowe") → -1
+
+
+// Reduce again:
+
+// prefix = "flow"
+
+
+// Now:
+
+// "flow".indexOf("flow") → 0  
+
+
+// Exit while loop.
+
+// Outer Loop (i = 2)
+// strs[2] = "flight"
+
+
+// Check:
+
+// "flight".indexOf("flow") → -1
+
+
+// Reduce prefix:
+
+// prefix = "flo"
+
+
+// Check:
+
+// "flight".indexOf("flo") → -1
+
+
+// Reduce:
+
+// prefix = "fl"
+
+
+// Now:
+
+// "flight".indexOf("fl") → 0 
+
+
+// Exit loop.
+
+// Final Output
+// return "fl";
+
+
+// Output:
+
+// Longest common prefix: fl
