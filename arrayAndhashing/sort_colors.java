@@ -60,7 +60,10 @@ public class sort_colors {
 
         int nums[]={1,2,0,0,1,2,2,1,1,2};
 
-        obj.sortColors(nums);
+        obj.sortColors2(nums);
+        for (int i : nums) {
+        System.out.print( i + " ");
+        }
     }
     
 }

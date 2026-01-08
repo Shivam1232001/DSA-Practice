@@ -2,18 +2,22 @@ import java.util.Arrays;
 
 public class Boats_to_Save_People {
     public int numRescueBoats(int[] people, int limit) {
-        int l=0;
-        int r=people.length-1;
-        int res=0;
         Arrays.sort(people);
-        while(l<=r){
-            int remain=limit-people[r--];
-            res++;
-            if(l<=r && remain>=people[l]){
-                l++;
+
+        int left = 0;
+        int right = people.length - 1;
+        int boats = 0;
+
+        while (left <= right) {
+
+            if (people[left] + people[right] <= limit) {
+                left++;   
             }
+            right--;      
+            boats++;      
         }
-        return res;
+
+        return boats;
     }
 
     public static void main(String[] args) {
